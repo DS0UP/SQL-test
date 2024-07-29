@@ -6,7 +6,7 @@ const router = express.Router();
 
 // ** GET / 요청
 router.get("/", (req, res) => {
-  res.send("Hello Test Router!");
+  res.render("test/test");
 });
 
 // ** router export

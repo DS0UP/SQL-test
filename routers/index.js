@@ -6,7 +6,7 @@ const router = express.Router();
 
 // ** GET / 요청
 router.get("/", (req, res) => {
-  res.send("Hello Index Router!");
+  res.render("index");
 });
 
 // ** router export
