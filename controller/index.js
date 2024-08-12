@@ -4,11 +4,13 @@ const express = require("express");
 // ** express router
 const router = express.Router();
 
-const pool = require("../DB");
+const phoneController = require("./phoneController");
+
+router.use("/phone",phoneController);
 
 // ** GET / 요청
 router.get("/", (req, res) => {
-  res.render("index");
+  res.render("phone/savePhone.html");
 });
 
 router.post("/test", (req, res) => {
@@ -26,7 +28,7 @@ router.post("/test", (req, res) => {
         console.log(err);
       }
       conn.query(sql2,(err,result) => {
-        res.render("test/list.ejs", {result})
+        res.render("phone/list.ejs", {result})
       })
     });
     conn.release();
